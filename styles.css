@@ -64,6 +64,7 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
+  color: #ffffff !important; /* Explicitly white text for max visibility */
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -210,6 +211,7 @@ body {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   font-weight: 500;
+  color: #ffffff !important; /* Fallback */
   color: var(--text-secondary);
   text-decoration: none;
   border-radius: var(--radius-sm);
@@ -465,6 +467,7 @@ body {
 
 .hero-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: #ffffff !important; /* Fallback */
   color: var(--text-secondary);
   max-width: 52ch;
   margin: 0 auto 2.5rem;
