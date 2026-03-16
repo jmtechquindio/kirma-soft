@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIRMA — Innovación Tecnológica & Automatización</title>
+  <meta name="description" content="Diseñamos soluciones tecnológicas y automatizamos procesos para que las empresas evolucionen. IA, automatización de workflows y plataformas digitales personalizadas." />
+  <meta name="keywords" content="automatización, tecnología, IA, inteligencia artificial, procesos empresariales, innovación, RPA, plataformas digitales" />
+  <meta property="og:title" content="KIRMA — Innovación Tecnológica & Automatización" />
+  <meta property="og:description" content="Soluciones tecnológicas y automatización de procesos para empresas que quieren evolucionar." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Canvas for particle background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Navegación principal">
+      <a href="#hero" class="nav-logo" aria-label="KIRMA - Ir al inicio">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+            <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2"/>
+            <circle cx="20" cy="20" r="10" stroke="url(#logoGrad)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+            <path d="M20 2 A18 18 0 0 1 38 20" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFB800"/>
+                <stop offset="100%" stop-color="#FF6B00"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">KIRMA</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#servicios" class="nav-link" data-section="servicios">Servicios</a></li>
+        <li><a href="#casos" class="nav-link" data-section="casos">Casos</a></li>
+        <li><a href="#proceso" class="nav-link" data-section="proceso">Proceso</a></li>
+        <li><a href="#nosotros" class="nav-link" data-section="nosotros">Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link nav-link--cta" id="navContacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section" aria-label="Sección principal">
+      <div class="hero-bg-effects" aria-hidden="true">
+        <div class="glow glow--1"></div>
+        <div class="glow glow--2"></div>
+        <div class="glow glow--3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span class="mono">Automate. Build. Innovate.</span>
+        </div>
+
+        <h1 class="hero-title">
+          Innovación tecnológica<br />
+          <span class="gradient-text">&amp; automatización</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Diseñamos soluciones tecnológicas y automatizamos procesos
+          para que las empresas evolucionen al siguiente nivel.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#servicios" class="btn btn--primary" id="heroExplorar">
+            <span>Explorar soluciones</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn--secondary" id="heroAsesoria">Solicitar asesoría</a>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="Estadísticas clave">
+          <div class="stat-card" role="listitem">
+            <span class="stat-number" data-target="50" data-suffix="+">0</span>
+            <span class="stat-label">Procesos automatizados</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-number" data-target="98" data-suffix="%">0</span>
+            <span class="stat-label">Satisfacción cliente</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-number" data-target="3" data-suffix="x">0</span>
+            <span class="stat-label">Más productividad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="mono scroll-text">scroll</span>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="tecnologia" class="section intro-section" aria-label="Tecnología que transforma">
+      <div class="container">
+        <div class="section-tag mono">
+          <span class="tag-line" aria-hidden="true"></span>
+          Nuestra misión
+        </div>
+        <div class="intro-grid">
+          <div class="intro-text">
+            <h2 class="section-title">Tecnología que <span class="gradient-text">transforma</span></h2>
+            <p class="body-text">
+              En KIRMA creemos que la tecnología debe trabajar para las personas, no al revés.
+              Combinamos inteligencia artificial, automatización avanzada y desarrollo de
+              plataformas digitales para mejorar la productividad de equipos y empresas.
+            </p>
+            <p class="body-text">
+              Cada proyecto es único. Analizamos tu contexto, diseñamos soluciones a medida
+              y las implementamos con métricas claras de impacto.
+            </p>
+          </div>
+          <div class="intro-visual" aria-hidden="true">
+            <div class="tech-card tc--1">
+              <div class="tc-icon">⚡</div>
+              <div class="tc-label mono">Automatización</div>
+            </div>
+            <div class="tech-card tc--2">
+              <div class="tc-icon">🧠</div>
+              <div class="tc-label mono">I.A. Avanzada</div>
+            </div>
+            <div class="tech-card tc--3">
+              <div class="tc-icon">🔗</div>
+              <div class="tc-label mono">Integración API</div>
+            </div>
+            <div class="tech-card tc--4">
+              <div class="tc-icon">📊</div>
+              <div class="tc-label mono">Analytics</div>
+            </div>
+            <div class="floating-orb orb--1"></div>
+            <div class="floating-orb orb--2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section services-section" aria-label="Nuestros servicios">
+      <div class="container">
+        <div class="section-tag mono">
+          <span class="tag-line" aria-hidden="true"></span>
+          Lo que hacemos
+        </div>
+        <h2 class="section-title">Nuestros <span class="gradient-text">Servicios</span></h2>
+        <p class="section-subtitle">Soluciones integrales diseñadas para maximizar el rendimiento y la eficiencia de tu empresa</p>
+
+        <div class="services-grid" role="list">
+
+          <article class="service-card" role="listitem" tabindex="0" data-service="automatizacion">
+            <div class="service-card__inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <rect x="26" y="4" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <rect x="4" y="26" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M35 26v18M26 35h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="13" cy="13" r="3" fill="currentColor"/>
+                  <circle cx="35" cy="13" r="3" fill="currentColor"/>
+                  <circle cx="13" cy="35" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="service-number mono" aria-hidden="true">01</div>
+              <h3 class="service-title">Automatización de Procesos</h3>
+              <p class="service-desc">Workflows inteligentes, integración de APIs, bots de automatización e IA para eliminar tareas repetitivas y liberar el potencial de tu equipo.</p>
+              <ul class="service-features" aria-label="Características del servicio">
+                <li><span class="feature-check" aria-hidden="true">✓</span> RPA y bots inteligentes</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Integración de sistemas legacy</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Workflows con n8n/Make/Zapier</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Monitoreo y reporting automático</li>
+              </ul>
+              <div class="service-metric">
+                <span class="metric-number">-60%</span>
+                <span class="metric-label">tiempo manual</span>
+              </div>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card service-card--featured" role="listitem" tabindex="0" data-service="plataformas">
+            <div class="service-card__inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 44h16M24 36v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 20h8M12 26h12M28 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="service-number mono" aria-hidden="true">02</div>
+              <div class="featured-badge mono">Popular</div>
+              <h3 class="service-title">Soluciones Tecnológicas</h3>
+              <p class="service-desc">Plataformas digitales personalizadas y sistemas empresariales que conectan a tus equipos y datos en un ecosistema unificado y escalable.</p>
+              <ul class="service-features" aria-label="Características del servicio">
+                <li><span class="feature-check" aria-hidden="true">✓</span> Aplicaciones web y móviles</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Dashboards y analytics</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Sistemas ERP/CRM personalizados</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Arquitecturas cloud-native</li>
+              </ul>
+              <div class="service-metric">
+                <span class="metric-number">+45%</span>
+                <span class="metric-label">eficiencia operativa</span>
+              </div>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card" role="listitem" tabindex="0" data-service="innovacion">
+            <div class="service-card__inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4C13.5 4 5 12.5 5 23c0 6.4 3.2 12.1 8 15.6V40h22v-1.4C39.8 35.1 43 29.4 43 23c0-10.5-8.5-19-19-19z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M18 40v4h12v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M24 12v4M24 28v4M34 18l-3 3M17 25l-3 3M36 28l-3-3M17 18l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="24" cy="23" r="4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="service-number mono" aria-hidden="true">03</div>
+              <h3 class="service-title">Innovación con IA</h3>
+              <p class="service-desc">Soluciones de inteligencia artificial avanzada que aprenden de tus datos, optimizan decisiones y crean ventajas competitivas sostenibles.</p>
+              <ul class="service-features" aria-label="Características del servicio">
+                <li><span class="feature-check" aria-hidden="true">✓</span> Modelos de IA personalizados</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> NLP y procesamiento de documentos</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Visión computacional</li>
+                <li><span class="feature-check" aria-hidden="true">✓</span> Agentes autónomos con LLMs</li>
+              </ul>
+              <div class="service-metric">
+                <span class="metric-number">100%</span>
+                <span class="metric-label">escalable</span>
+              </div>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="casos" class="section cases-section" aria-label="Casos de uso">
+      <div class="container">
+        <div class="section-tag mono">
+          <span class="tag-line" aria-hidden="true"></span>
+          Resultados reales
+        </div>
+        <h2 class="section-title">Casos de <span class="gradient-text">Uso</span></h2>
+        <p class="section-subtitle">Proyectos que demuestran el impacto real de nuestras soluciones</p>
+
+        <div class="cases-list" role="list">
+
+          <article class="case-item" role="listitem" tabindex="0" id="case-01">
+            <div class="case-number mono" aria-hidden="true">01</div>
+            <div class="case-content">
+              <div class="case-tags" aria-label="Categorías">
+                <span class="tag mono">RPA</span>
+                <span class="tag mono">Automatización</span>
+              </div>
+              <h3 class="case-title">Automatización Empresarial</h3>
+              <p class="case-desc">Implementación de RPA y bots inteligentes para eliminar procesos manuales repetitivos. Integración con ERPs y sistemas legacy para sincronización automática de datos.</p>
+              <div class="case-metrics" aria-label="Métricas de impacto">
+                <div class="case-metric">
+                  <span class="case-metric__value">-60%</span>
+                  <span class="case-metric__label">Tiempo manual</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">x3</span>
+                  <span class="case-metric__label">Velocidad proceso</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">0</span>
+                  <span class="case-metric__label">Errores humanos</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-arrow" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </article>
+
+          <article class="case-item" role="listitem" tabindex="0" id="case-02">
+            <div class="case-number mono" aria-hidden="true">02</div>
+            <div class="case-content">
+              <div class="case-tags" aria-label="Categorías">
+                <span class="tag mono">Plataforma</span>
+                <span class="tag mono">Digital</span>
+              </div>
+              <h3 class="case-title">Plataformas Digitales</h3>
+              <p class="case-desc">Desarrollo de ecosistemas digitales que conectan equipos, departamentos y datos en tiempo real. Dashboards inteligentes con KPIs accionables y flujo de información centralizado.</p>
+              <div class="case-metrics" aria-label="Métricas de impacto">
+                <div class="case-metric">
+                  <span class="case-metric__value">+45%</span>
+                  <span class="case-metric__label">Eficiencia equipo</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">-80%</span>
+                  <span class="case-metric__label">Silos de datos</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">∞</span>
+                  <span class="case-metric__label">Escalabilidad</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-arrow" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </article>
+
+          <article class="case-item" role="listitem" tabindex="0" id="case-03">
+            <div class="case-number mono" aria-hidden="true">03</div>
+            <div class="case-content">
+              <div class="case-tags" aria-label="Categorías">
+                <span class="tag mono">IA</span>
+                <span class="tag mono">Innovación</span>
+              </div>
+              <h3 class="case-title">Soluciones con Inteligencia Artificial</h3>
+              <p class="case-desc">Modelos de IA entrenados con datos propios del cliente para automatizar decisiones complejas, clasificar contenido, extraer información y predecir comportamientos.</p>
+              <div class="case-metrics" aria-label="Métricas de impacto">
+                <div class="case-metric">
+                  <span class="case-metric__value">100%</span>
+                  <span class="case-metric__label">A medida</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">+90%</span>
+                  <span class="case-metric__label">Precisión modelos</span>
+                </div>
+                <div class="case-metric">
+                  <span class="case-metric__value">24/7</span>
+                  <span class="case-metric__label">Operación continua</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-arrow" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why KIRMA Section -->
+    <section id="porque" class="section why-section" aria-label="Por qué elegir KIRMA">
+      <div class="container">
+        <div class="section-tag mono">
+          <span class="tag-line" aria-hidden="true"></span>
+          Ventajas competitivas
+        </div>
+        <h2 class="section-title">¿Por qué <span class="gradient-text">KIRMA</span>?</h2>
+        <p class="section-subtitle">Más que un proveedor de tecnología, somos tu socio estratégico de transformación digital</p>
+
+        <div class="why-grid" role="list">
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">⚡</div>
+            <h3 class="why-title">Optimización Real</h3>
+            <p class="why-desc">Medimos cada mejora con KPIs concretos. No prometemos eficiencia, la demostramos con datos.</p>
+          </div>
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">💰</div>
+            <h3 class="why-title">Reducción de Costos</h3>
+            <p class="why-desc">Automatizar procesos reduce errores y costos operativos. ROI positivo desde los primeros meses.</p>
+          </div>
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🔗</div>
+            <h3 class="why-title">Integración Total</h3>
+            <p class="why-desc">Conectamos tus herramientas actuales sin fricción. Trabajamos con cualquier stack tecnológico.</p>
+          </div>
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🎯</div>
+            <h3 class="why-title">Personalización Absoluta</h3>
+            <p class="why-desc">No usamos plantillas. Cada solución se diseña desde cero según tus procesos y objetivos únicos.</p>
+          </div>
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🚀</div>
+            <h3 class="why-title">Innovación Continua</h3>
+            <p class="why-desc">Adoptamos las últimas tecnologías de IA y automatización para mantenerte a la vanguardia.</p>
+          </div>
+          <div class="why-card" role="listitem" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🛡️</div>
+            <h3 class="why-title">Soporte Dedicado</h3>
+            <p class="why-desc">Acompañamiento continuo post-implementación. Tu éxito es nuestro éxito a largo plazo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proceso" class="section process-section" aria-label="Nuestro proceso">
+      <div class="container">
+        <div class="section-tag mono">
+          <span class="tag-line" aria-hidden="true"></span>
+          Metodología
+        </div>
+        <h2 class="section-title">Nuestro <span class="gradient-text">Proceso</span></h2>
+        <p class="section-subtitle">Un enfoque estructurado y colaborativo para garantizar resultados excepcionales en cada proyecto</p>
+
+        <div class="process-timeline" role="list" aria-label="Pasos del proceso">
+
+          <div class="process-step" role="listitem" tabindex="0">
+            <div class="step-connector" aria-hidden="true">
+              <div class="step-line"></div>
+            </div>
+            <div class="step-number mono" aria-hidden="true">01</div>
+            <div class="step-content">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Diagnóstico</h3>
+              <p class="step-desc">Analizamos en profundidad tus procesos actuales, identificamos cuellos de botella, oportunidades de automatización y definimos el alcance del proyecto con métricas de éxito claras.</p>
+              <div class="step-duration mono">~1-2 semanas</div>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem" tabindex="0">
+            <div class="step-connector" aria-hidden="true">
+              <div class="step-line"></div>
+            </div>
+            <div class="step-number mono" aria-hidden="true">02</div>
+            <div class="step-content">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <rect x="4" y="4" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 12h12M10 16h8M10 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Diseño</h3>
+              <p class="step-desc">Desarrollamos la arquitectura de la solución, wireframes o diagramas de flujo según el proyecto, y presentamos un plan detallado con tecnologías, tiempos y costos antes de escribir una línea de código.</p>
+              <div class="step-duration mono">~1-3 semanas</div>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem" tabindex="0">
+            <div class="step-connector" aria-hidden="true">
+              <div class="step-line"></div>
+            </div>
+            <div class="step-number mono" aria-hidden="true">03</div>
+            <div class="step-content">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <path d="M6 16l6 6 14-14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Implementación</h3>
+              <p class="step-desc">Construimos la solución con metodología ágil, con entregas iterativas para validar en cada sprint. Pruebas exhaustivas, documentación y capacitación del equipo incluidas.</p>
+              <div class="step-duration mono">~2-8 semanas</div>
+            </div>
+          </div>
+
+          <div class="process-step" role="listitem" tabindex="0">
+            <div class="step-connector step-connector--last" aria-hidden="true">
+              <div class="step-line"></div>
+            </div>
+            <div class="step-number mono" aria-hidden="true">04</div>
+            <div class="step-content">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="16" cy="16" r="7" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="step-title">Optimización</h3>
+              <p class="step-desc">Monitoreamos el rendimiento post-lanzamiento, analizamos métricas reales y realizamos ajustes continuos. La solución mejora con el tiempo gracias al aprendizaje continuo.</p>
+              <div class="step-duration mono">Continuo</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about-section" aria-label="Sobre KIRMA">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual" aria-hidden="true">
+            <div class="about-card about-card--1">
+              <div class="about-card-label mono">Stack tecnológico</div>
+              <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">n8n</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">OpenAI</span>
+                <span class="tech-badge">LangChain</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">AWS/GCP</span>
+                <span class="tech-badge">Zapier</span>
+                <span class="tech-badge">Make</span>
+                <span class="tech-badge">Supabase</span>
+              </div>
+            </div>
+            <div class="about-card about-card--2">
+              <div class="about-card-label mono">Modelo de trabajo</div>
+              <div class="work-model">
+                <div class="work-item">
+                  <span class="work-dot" aria-hidden="true"></span>
+                  <span>100% remoto o presencial</span>
+                </div>
+                <div class="work-item">
+                  <span class="work-dot" aria-hidden="true"></span>
+                  <span>Metodología ágil</span>
+                </div>
+                <div class="work-item">
+                  <span class="work-dot" aria-hidden="true"></span>
+                  <span>Entregas iterativas</span>
+                </div>
+                <div class="work-item">
+                  <span class="work-dot" aria-hidden="true"></span>
+                  <span>Soporte post-implementación</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-text">
+            <div class="section-tag mono">
+              <span class="tag-line" aria-hidden="true"></span>
+              Quiénes somos
+            </div>
+            <h2 class="section-title">Sobre <span class="gradient-text">KIRMA</span></h2>
+            <div class="about-tagline mono">Automate. Build. Innovate.</div>
+            <p class="body-text">
+              KIRMA nació de la convicción de que la tecnología puede transformar radicalmente
+              la forma en que las empresas operan. Somos un equipo de ingenieros, diseñadores
+              y estrategas tecnológicos apasionados por resolver problemas complejos con
+              soluciones elegantes.
+            </p>
+            <p class="body-text">
+              No somos una agencia de desarrollo tradicional. Somos socios de transformación
+              digital que nos involucramos profundamente con los procesos de cada cliente
+              para identificar el máximo impacto posible con la tecnología disponible.
+            </p>
+            <div class="about-values" role="list" aria-label="Valores">
+              <div class="value-item" role="listitem">
+                <div class="value-icon" aria-hidden="true">🎯</div>
+                <div>
+                  <strong>Orientados a resultados</strong>
+                  <p>Cada línea de código tiene un propósito medible</p>
+                </div>
+              </div>
+              <div class="value-item" role="listitem">
+                <div class="value-icon" aria-hidden="true">🤝</div>
+                <div>
+                  <strong>Transparencia total</strong>
+                  <p>Comunicación clara en cada etapa del proyecto</p>
+                </div>
+              </div>
+              <div class="value-item" role="listitem">
+                <div class="value-icon" aria-hidden="true">🌱</div>
+                <div>
+                  <strong>Crecimiento continuo</strong>
+                  <p>Siempre adoptando las mejores tecnologías</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section contact-section" aria-label="Formulario de contacto">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="section-tag mono">
+              <span class="tag-line" aria-hidden="true"></span>
+              Hablemos
+            </div>
+            <h2 class="section-title">Inicia tu <span class="gradient-text">proyecto</span></h2>
+            <p class="body-text">
+              Cuéntanos tu desafío. En menos de 24 horas tendrás una respuesta con
+              una propuesta inicial de cómo podríamos ayudarte.
+            </p>
+
+            <div class="contact-perks" role="list" aria-label="Beneficios del contacto">
+              <div class="perk" role="listitem">
+                <div class="perk-icon" aria-hidden="true">⚡</div>
+                <div>
+                  <strong>Respuesta en &lt;24h</strong>
+                  <p>Tiempo de respuesta garantizado</p>
+                </div>
+              </div>
+              <div class="perk" role="listitem">
+                <div class="perk-icon" aria-hidden="true">🎁</div>
+                <div>
+                  <strong>Primera asesoría gratuita</strong>
+                  <p>Sin compromiso ni costo inicial</p>
+                </div>
+              </div>
+              <div class="perk" role="listitem">
+                <div class="perk-icon" aria-hidden="true">🌐</div>
+                <div>
+                  <strong>Remoto o presencial</strong>
+                  <p>Nos adaptamos a tu forma de trabajar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" novalidate aria-label="Formulario de contacto">
+              <div id="formSuccess" class="form-success" role="alert" aria-live="polite" hidden>
+                <div class="success-icon" aria-hidden="true">✓</div>
+                <h3>¡Mensaje enviado!</h3>
+                <p>Te responderemos en menos de 24 horas.</p>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Nombre <span aria-label="campo requerido">*</span></label>
+                  <input type="text" id="contactName" name="name" class="form-input" placeholder="Tu nombre" required autocomplete="name" aria-required="true" />
+                  <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contactCompany" class="form-label">Empresa</label>
+                  <input type="text" id="contactCompany" name="company" class="form-input" placeholder="Tu empresa" autocomplete="organization" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email <span aria-label="campo requerido">*</span></label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="tu@empresa.com" required autocomplete="email" aria-required="true" />
+                <span class="form-error" id="emailError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactService" class="form-label">Servicio de interés</label>
+                <select id="contactService" name="service" class="form-input form-select" aria-label="Seleccionar servicio">
+                  <option value="">Selecciona un servicio...</option>
+                  <option value="automatizacion">Automatización de Procesos</option>
+                  <option value="plataformas">Soluciones Tecnológicas</option>
+                  <option value="ia">Innovación con IA</option>
+                  <option value="consulta">Consultoría General</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Mensaje <span aria-label="campo requerido">*</span></label>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Cuéntanos sobre tu proyecto o desafío..." required rows="5" aria-required="true"></textarea>
+                <span class="form-error" id="messageError" role="alert" aria-live="polite"></span>
+                <span class="char-count" id="charCount" aria-live="polite">0 / 500</span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                <span id="btnText">Enviar mensaje</span>
+                <span id="btnLoader" class="btn-loader" hidden aria-hidden="true"></span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="btnArrow" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo footer-logo" aria-label="KIRMA - Ir al inicio">
+            <div class="logo-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                <circle cx="20" cy="20" r="18" stroke="url(#footerLogoGrad)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="10" stroke="url(#footerLogoGrad)" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <circle cx="20" cy="20" r="4" fill="url(#footerLogoGrad)"/>
+                <path d="M20 2 A18 18 0 0 1 38 20" stroke="url(#footerLogoGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="footerLogoGrad" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFB800"/>
+                    <stop offset="100%" stop-color="#FF6B00"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="logo-text">KIRMA</span>
+          </a>
+          <p class="footer-desc">Innovación tecnológica y automatización de procesos para empresas que quieren evolucionar.</p>
+          <div class="footer-tagline mono">Automate. Build. Innovate.</div>
+        </div>
+
+        <div class="footer-nav" aria-label="Navegación del pie">
+          <h4 class="footer-nav-title">Navegación</h4>
+          <ul role="list">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#casos">Casos de uso</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav" aria-label="Servicios en el pie">
+          <h4 class="footer-nav-title">Servicios</h4>
+          <ul role="list">
+            <li><a href="#servicios">Automatización RPA</a></li>
+            <li><a href="#servicios">Plataformas digitales</a></li>
+            <li><a href="#servicios">IA y Machine Learning</a></li>
+            <li><a href="#servicios">Consultoría tecnológica</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact" aria-label="Contacto en el pie">
+          <h4 class="footer-nav-title">Contacto</h4>
+          <p class="mono" style="color: var(--text-muted); font-size: 0.875rem;">Respuesta garantizada en &lt;24h</p>
+          <a href="#contacto" class="btn btn--primary" style="width:fit-content; margin-top: 1rem; font-size:0.875rem; padding: 0.75rem 1.5rem;">
+            Solicitar asesoría
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mono footer-copy">© 2026 KIRMA. Todos los derechos reservados.</p>
+        <div class="footer-links">
+          <a href="#" onclick="return false;">Privacidad</a>
+          <a href="#" onclick="return false;">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver al inicio" title="Volver al inicio">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
