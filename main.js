@@ -100,7 +100,7 @@ const ParticleSystem = (() => {
     window.addEventListener('resize', () => {
       resize();
       initParticles();
-    });
+    }, { passive: true });
   }
 
   return { init };
@@ -489,36 +489,46 @@ const ContactForm = (() => {
 // MODULE: Interactive Cards Enhancement
 // ============================================================
 const CardInteractions = (() => {
-  function addMouseGlow(cards) {
+  function initTilt(cards) {
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const xPercent = (x / rect.width) * 100;
-        const yPercent = (y / rect.height) * 100;
-        card.style.setProperty('--mouse-x', `${xPercent}%`);
-        card.style.setProperty('--mouse-y', `${yPercent}%`);
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
+        const rotateY = ((x - centerX) / centerX) * 10; // Max 10deg
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        card.style.transition = 'transform 0.1s ease-out';
+        
+        // Update glow if present
+        const glow = card.querySelector('.service-card__glow');
+        if (glow) {
+          const gx = e.clientX - rect.left - glow.offsetWidth / 2;
+          const gy = e.clientY - rect.top - glow.offsetHeight / 2;
+          glow.style.transform = `translate(${gx}px, ${gy}px)`;
+          glow.style.opacity = '1';
+        }
       });
-    });
-  }
 
-  function initServiceCardGlow() {
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-      const glow = card.querySelector('.service-card__glow');
-      if (!glow) return;
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - glow.offsetWidth / 2;
-        const y = e.clientY - rect.top - glow.offsetHeight / 2;
-        glow.style.transform = `translate(${x}px, ${y}px)`;
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)`;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+        
+        const glow = card.querySelector('.service-card__glow');
+        if (glow) {
+          glow.style.opacity = '0';
+        }
       });
     });
   }
 
   function init() {
-    initServiceCardGlow();
+    initTilt(document.querySelectorAll('.service-card, .why-card, .case-item'));
 
     // Keyboard navigation for cards
     document.querySelectorAll('[tabindex="0"]').forEach(el => {
