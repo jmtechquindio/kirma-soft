@@ -401,9 +401,6 @@ const ContactForm = (() => {
     formSuccess.style.animation = 'fadeInUp 0.5s ease';
   }
 
-  function simulateSend() {
-    return new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 500));
-  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -425,10 +422,34 @@ const ContactForm = (() => {
 
     setLoading(true);
     try {
-      await simulateSend();
-      showSuccess();
+      // Prepare form data
+      const formData = new FormData(form);
+      
+      // Enviar a Formspree usando fetch
+      const response = await fetch('https://formspree.io/f/mpwzejvj', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        showSuccess();
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          const errorMsg = data.errors.map(error => error.message).join(', ');
+          alert('Hubo un error al enviar el formulario: ' + errorMsg);
+        } else {
+          alert('Ups! Ocurrió un error al enviar el mensaje. Por favor intenta más tarde.');
+        }
+        setLoading(false);
+      }
     } catch (err) {
-      console.error(err);
+      console.error('Error enviando formulario:', err);
+      alert('Ups! Ocurrió un error de red al enviar el mensaje.');
       setLoading(false);
     }
   }
