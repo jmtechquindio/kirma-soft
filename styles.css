@@ -19,6 +19,10 @@
   --accent-glow: rgba(255, 184, 0, 0.12);
   --accent-glow-strong: rgba(255, 184, 0, 0.25);
 
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: 16px;
