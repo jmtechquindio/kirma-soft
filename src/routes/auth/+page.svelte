@@ -1,7 +1,7 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
   let isLogin = true;
-  export let form;
+  let { form } = $props();
 </script>
 
 <div class="min-h-screen flex items-center justify-center bg-gray-900 px-4">
