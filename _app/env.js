@@ -1,0 +1,1 @@
+export const env={"PUBLIC_SUPABASE_ANON_KEY":"dummy-key","PUBLIC_SUPABASE_URL":"https://placeholder.supabase.co"}
