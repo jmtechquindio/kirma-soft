@@ -2,6 +2,9 @@ import { createBrowserClient, isBrowser, parseCookies } from '@supabase/ssr';
 import type { LayoutLoad } from './$types';
 import { env } from '$env/dynamic/public';
 
+export const ssr = false;
+export const prerender = false;
+
 export const load: LayoutLoad = async ({ fetch, data, depends }) => {
   depends('supabase:auth');
 
