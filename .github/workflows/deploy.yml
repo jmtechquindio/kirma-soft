@@ -27,7 +27,9 @@ jobs:
         env:
           PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
           PUBLIC_SUPABASE_ANON_KEY: dummy-key
-        run: npm run build
+        run: |
+          npm run build
+          cp ./build/index.html ./build/404.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
