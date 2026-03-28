@@ -1,9 +1,23 @@
-# Dependencies
-node_modules/
+node_modules
 
-# Mac
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
 .DS_Store
+Thumbs.db
 
-# Misc
+# Env
 .env
-.env.local
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

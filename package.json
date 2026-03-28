@@ -1,16 +1,36 @@
 {
-  "name": "prograde-constellation",
-  "version": "1.0.0",
-  "description": "",
-  "main": "scrape.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "puppeteer": "^24.37.5"
-  }
+	"name": "temp-init",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.1",
+		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"autoprefixer": "^10.4.27",
+		"postcss": "^8.5.8",
+		"svelte": "^5.54.0",
+		"svelte-check": "^4.4.2",
+		"tailwindcss": "^4.2.2",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1",
+		"vitest": "^4.1.2"
+	},
+	"dependencies": {
+		"@supabase/ssr": "^0.9.0",
+		"@supabase/supabase-js": "^2.100.1",
+		"clsx": "^2.1.1",
+		"lucide-svelte": "^1.0.1",
+		"tailwind-merge": "^3.5.0",
+		"zod": "^4.3.6"
+	}
 }
